@@ -10,9 +10,8 @@ const Input = (props) => {
     const onChange = e => {
         task.name = e.target.value;
     }
-    const onClick = e => {
+    const onClick = () => {
         setList([...list, task]);
-        e.target.value = "";
     }
 
     return(
