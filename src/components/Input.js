@@ -7,18 +7,18 @@ const Input = (props) => {
         isComplete: false,
     };
 
-    const onChange = e => {
+    const onChange = (e) => {
         task.name = e.target.value;
     }
-    const onClick = () => {
+    const onClick = (e) => {
+        e.preventDefault();
         setList([...list, task]);
     }
-
     return(
 
                 <div className="mycontainer">
                     <label className="mylabel">Add a Chore - &nbsp;&nbsp;</label>
-                    <input spellCheck="false" className="form-control" onChange={onChange} type="text" name="task"/>
+                    <input spellCheck="false" className="form-control" onChange={onChange} type="text" />
                     <button onClick={onClick} className="btn btn-primary"></button>
                 </div>
 
