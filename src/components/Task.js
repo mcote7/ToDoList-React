@@ -20,9 +20,17 @@ const Task = (props) => {
         }
     }
 
+    let className ="form-control readonly";
+    if(list[index].isComplete) {
+            className += "form-control readonly line";
+        }
+        let id ="mycontainer";
+        if(list[index].isComplete) {
+                id = "complete";
+            }
     return(
-        <div className="mycontainer">
-            <input readOnly placeholder={task.name} className="form-control readonly"/>
+        <div id={id}>
+            <input readOnly placeholder={task.name} className={className}/>
             <hr/>
             <label className="mylabel">Completed &nbsp;</label>
             <input onChange={onChange} type="checkbox" checked={task.isComplete}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

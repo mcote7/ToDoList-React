@@ -17,8 +17,8 @@ const Input = (props) => {
     return(
 
                 <div className="mycontainer">
+                    <input spellCheck="false" className="form-control" onChange={onChange} type="text" /><hr/>
                     <label className="mylabel">Add a Chore - &nbsp;&nbsp;</label>
-                    <input spellCheck="false" className="form-control" onChange={onChange} type="text" />
                     <button onClick={onClick} className="btn btn-primary"></button>
                 </div>
 
