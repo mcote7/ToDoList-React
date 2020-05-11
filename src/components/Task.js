@@ -4,12 +4,20 @@ const Task = (props) => {
     const {task, index, list, setList} = props;
 
     const onClick = () => {
-        return setList(() => list.filter(task => list.indexOf(task) !== index));
-    }
+        setList(() => list.filter(task => list.indexOf(task) !== index));
+    };
 
     const onChange = () => {
         list[index].isComplete = !list[index].isComplete;
-        setList([...list]); 
+        setList([...list]);
+    };
+
+    const showDelete = () => {
+        if(list[index].isComplete) {
+            return(
+                <button className="btn btn-danger" onClick={onClick}></button>
+            );
+        }
     }
 
     return(
@@ -18,7 +26,7 @@ const Task = (props) => {
             <hr/>
             <label className="mylabel">Completed &nbsp;</label>
             <input onChange={onChange} type="checkbox" checked={task.isComplete}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button className="btn btn-danger" onClick={onClick}></button>
+            {showDelete()}
         </div>
     );
 };
